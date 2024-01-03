@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="PathWays.Register"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               CanBeDismissedByTappingOutsideOfPopup="False"
+               >
+    <VerticalStackLayout BackgroundColor="White" MinimumWidthRequest="250" MinimumHeightRequest="300" Padding="20">
+
+        <Image x:Name="UploadedOrSelectedImage"
+               HeightRequest="100"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Source="dotnet_bot.png" />
+
+        <Entry Placeholder="First Name"
+               Text="{Binding First_Name}"
+               Margin="0,0,0,5" />
+
+        <Entry Placeholder="Middle Name"
+               Text="{Binding Middle_Name}"
+               Margin="0,0,0,5" />
+
+        <Entry Placeholder="Last Name"
+               Text="{Binding Last_Name}"
+               Margin="0,0,0,20" />
+
+        <Picker Title="Select Gender"
+                SelectedItem="{Binding Gender, Mode=TwoWay}"
+                Margin="0,0,0,20">
+            <Picker.Items>
+                <x:String>Male</x:String>
+                <x:String>Female</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry Placeholder="Email"
+               Text="{Binding Email_1}"
+               Margin="0,0,0,5" />
+
+        <Entry Placeholder="Mobile Phone"
+               Text="{Binding Mobile_Phone}"
+               Margin="0,0,0,20" />
+
+        <Entry Placeholder="Address"
+               Text="{Binding Address_1}"
+               Margin="0,0,0,5" />
+
+        <Entry Placeholder="Postal Code"
+               Text="{Binding Postal_Code}"
+               Margin="0,0,0,20" />
+
+        <Button Text="Register"
+                Clicked="OnRegisterClicked"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="5"
+                Margin="0,0,0,20" />
+
+        <Button Text="Close!"
+                Clicked="NoButton_Clicked"/>
+    </VerticalStackLayout>
+</toolkit:Popup>
